@@ -21,5 +21,9 @@
             <div class="blog-content">{{ .Content }}</div>
         </div>
     </article>
+
+    <div class="comments-section">
+        {{ partial "comments.html" .}}
+    </div>
 </body>
 </html>

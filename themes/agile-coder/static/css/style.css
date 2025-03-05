@@ -4,6 +4,7 @@
 @import url('header.css');
 @import url('blog-list.css');
 @import url('blog-page.css');
+@import url('comments.css');
 
 * {
   margin: 0;
