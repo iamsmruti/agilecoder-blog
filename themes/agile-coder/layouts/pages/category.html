@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer src="{{ "js/accordion.js" | relURL }}"></script>
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+
+    <div class="header-image-container">
+      {{ with .Resources.GetMatch .Params.cover }}
+      <img class="header-image" src="{{ .RelPermalink }}" alt="Cover Image" />
+      {{ else }}
+      <img
+        class="header-image"
+        src="/default-thumbnail.png"
+        alt="Default Cover Image"
+      />
+      {{ end }}
+    </div>
+
+    <article class="blog-page">
+      <div>
+        <p class="blog-title">{{ .Title }}</p>
+
+        {{ .Content }}
+      </div>
+    </article>
+
+    {{ partial "footer.html" . }}
+  </body>
+</html>

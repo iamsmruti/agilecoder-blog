@@ -1,0 +1,30 @@
+.accordion-header {
+  background-color: transparent;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgb(40, 40, 40);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 10px 0;
+  font-family: 'Space Mono';
+  font-size: 24px;
+}
+
+.accordion-content {
+  display: none;
+  border: 1px solid rgb(40, 40, 40);
+  border-top: none;
+  margin-top: -10px;
+  padding: 0 20px 20px 20px;
+  color: rgb(213, 213, 213);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.accordion-header.active {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}

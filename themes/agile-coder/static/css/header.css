@@ -11,12 +11,13 @@
 }
 
 .logo p {
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 400;
   font-family: 'Space Mono';
 }
 
 .logo img {
-  width: 32px;
+  width: 24px;
   margin-right: 1rem;
 }
 
@@ -33,6 +34,5 @@
 }
 
 .header li {
-  margin: 0 1rem;
-  font-size: large;
+  margin: 0 0 0 1rem;
 }

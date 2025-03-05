@@ -1,6 +1,10 @@
 <article class="blog-card">
   <div class="card-image">
-    <img src="{{ (.Page.Resources.GetMatch "thumbnail.png").RelPermalink }}" alt="Thumbnail">
+    {{ with .Page.Resources.GetMatch "thumbnail.png" }}
+      <img src="{{ .RelPermalink }}" alt="Thumbnail">
+    {{ else }}
+      <img src="/default-thumbnail.png" alt="Default Thumbnail">
+    {{ end }}
   </div>
   <div class="meta-info">
     <div>

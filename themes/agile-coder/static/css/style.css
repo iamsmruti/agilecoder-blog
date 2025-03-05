@@ -5,6 +5,7 @@
 @import url('blog-list.css');
 @import url('blog-page.css');
 @import url('comments.css');
+@import url('accordion.css');
 
 * {
   margin: 0;
