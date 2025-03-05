@@ -1,6 +1,7 @@
 <main class="blog-list">
   <p class="heading-small">LATEST</p>
-  {{ $posts := .Site.RegularPages }}
+
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
   {{ $totalPosts := len $posts }}
 
   {{ range first 10 $posts }}

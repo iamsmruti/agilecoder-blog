@@ -1,0 +1,83 @@
+{{ $post := $.Site.GetPage (printf "posts/%s" (.Get 0)) }} {{ if $post }}
+<article class="post-preview">
+  <a href="{{ $post.RelPermalink }}" class="preview-link">
+    <div class="preview-content">
+      <p class="preview-title">{{ $post.Title }}</p>
+      <span class="preview-summary">{{ $post.Summary }}</span>
+      <p class="preview-meta">
+        {{ $post.ReadingTime }} min read
+      </p>
+    </div>
+    <div class="preview-image">
+      {{ with $post.Resources.GetMatch $post.Params.cover }}
+      <img src="{{ .RelPermalink }}" alt="{{ $post.Title }}" />
+      {{ end }}
+    </div>
+  </a>
+</article>
+{{ else }}
+<p>Post not found!</p>
+{{ end }}
+
+<style>
+  .post-preview {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #2b2b2b;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 1rem;
+  }
+
+  .preview-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .preview-image {
+    width: 33%;
+    margin-left: 0.5rem;
+  }
+
+  .preview-image img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .preview-content {
+    flex: 1;
+  }
+
+  .preview-title {
+    margin: 0 !important;
+    font-size: 1rem;
+    font-family: "Space Mono";
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits text to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Line clamp for 2 lines */
+  .preview-summary {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #555;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits text to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .preview-meta {
+    margin: 0 !important;
+    margin-top: 0.3rem !important;
+    font-size: 0.8rem !important;
+    color: #777;
+  }
+</style>
