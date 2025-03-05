@@ -1,0 +1,25 @@
+<article class="blog-card">
+  <div class="card-image">
+    <img src="{{ "assets/thumbnail.png" | relURL }}" />
+  </div>
+  <div class="meta-info">
+    <div>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+
+      <!-- <div class="category-tags">
+        <p class="category"><a href="{{ "categories/" | relURL }}{{ .Params.category | urlize }}">{{ .Params.category }}</a></p>
+
+        <p class="tags">
+          {{ range .Params.tags }}
+            <a href="{{ "tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a>
+          {{ end }}
+        </p>
+      </div> -->
+
+      <p>{{ .Summary }}</p>
+    </div>
+    <div class="post-details">
+      <p class="published-date">- Published on {{ partial "ordinal-date.html" .Date }}</p>
+    </div>
+  </div>
+</article>
