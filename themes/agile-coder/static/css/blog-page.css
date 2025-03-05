@@ -23,11 +23,6 @@
   line-height: 130%;
 }
 
-.blog-published-date {
-  color: grey;
-  margin-top: 0.5rem;
-}
-
 .blog-summary {
   margin: 1rem 0;
   font-size: larger;
@@ -37,4 +32,13 @@
 .header-image {
   width: 100%;
   padding: 1rem 0;
+}
+
+.blog-stats {
+  color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: small;
 }

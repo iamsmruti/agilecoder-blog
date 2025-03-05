@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
     {{ partial "header.html" . }}
 
     <article class="blog-page">
-        <div>
-            <span class="category">{{ .Params.category }}</span>
-            <h2 class="blog-title">{{ .Title }}</h2>
-            <p class="blog-published-date"><small>Published on {{ .Date.Format "January 2, 2006" }}</small></p>
-            <p class="blog-summary">{{ .Summary }}</p>
-            <div class="header-image-container">
-                <img class="header-image" src="{{ "assets/thumbnail.png" | relURL }}" />
-            </div>
-            <div class="blog-content">{{ .Content }}</div>
+      <div>
+        <span class="category">{{ .Params.category }}</span>
+        <h2 class="blog-title">{{ .Title }}</h2>
+
+        <div class="blog-stats">
+          <p>
+            Published on {{ .Date.Format "January 2, 2006" }}
+          </p>
+
+          {{ if or .Params.reading_time .Params.word_count }}
+          <p>
+            {{ if .Params.word_count }} {{ .WordCount }} words {{ end }} {{ if
+            and .Params.word_count .Params.reading_time }} | {{ end }} {{ if
+            .Params.reading_time }}
+            <i class="fas fa-clock"></i> {{ .ReadingTime }} min read {{ end }}
+          </p>
+          {{ end }}
         </div>
+
+        <p class="blog-summary">{{ .Summary }}</p>
+        <div class="header-image-container">
+          {{ with .Resources.GetMatch .Params.cover }}
+          <img
+            class="header-image"
+            src="{{ .RelPermalink }}"
+            alt="Cover Image"
+          />
+          {{ else }}
+          <img
+            class="header-image"
+            src="/default-thumbnail.png"
+            alt="Default Cover Image"
+          />
+          {{ end }}
+        </div>
+        <div class="blog-content">{{ .Content }}</div>
+      </div>
     </article>
 
-    <div class="comments-section">
-        {{ partial "comments.html" .}}
-    </div>
-</body>
+    {{ if .Params.comments }}
+    <div class="comments-section">{{ partial "comments.html" . }}</div>
+    {{ end }}
+  </body>
 </html>
