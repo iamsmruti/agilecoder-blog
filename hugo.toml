@@ -2,3 +2,11 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Agile Coder'
 theme = "agile-coder"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNumbersInTable = true
+    noClasses = false  # This ensures styles are applied via CSS
+    style = "monokai"  # Change to any theme

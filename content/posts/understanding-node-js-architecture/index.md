@@ -1,7 +1,7 @@
 +++
 date = '2024-11-05T23:16:37+05:30'
 draft = false
-title = 'Understanding Node.js: Architecture and Internal Workings'
+title = 'Understanding Node.js Architecture'
 summary = 'Node.js enables efficient server apps in JavaScript, using a non-blocking, event-driven model. With Google’s V8 engine and Libuv, it excels at handling asynchronous I/O, ideal for real-time, scalable applications. This article dives into its architecture and internal mechanics.'
 category = 'NodeJS'
 tags = ['JavaScript', 'Backend', 'V8 Engine', 'Libuv']
@@ -13,7 +13,9 @@ word_count = false
 
 Node.js has revolutionized server-side programming by enabling developers to write scalable, efficient server applications in JavaScript. Although it’s popular for its non-blocking, event-driven model, understanding its internal architecture gives us a deeper appreciation of why it performs so well and how it’s structured. This post will explore how Node.js is built, its main components, and the internal mechanics that make it a robust choice for backend development.
 
+{{< quote >}}
 Node.js is an open-source, cross-platform JavaScript runtime environment. Its main distinction is its ability to execute JavaScript code on the server side, enabling full-stack development with a unified language. Node.js is particularly known for its non-blocking, asynchronous I/O operations and single-threaded, event-driven architecture, which contribute to its scalability and high performance.
+{{< /quote >}}
 
 ## NodeJS Architecture
 Let’s start by understanding the three main building blocks of Node.js: V8, Libuv, and Bindings.

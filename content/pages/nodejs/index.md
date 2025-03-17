@@ -20,5 +20,11 @@ Node.js uses an event-driven, non-blocking I/O model...
 ## NodeJS Internals
 Do you know what makes you a better software engineer? Understanding the internal architecture and how things work behind the scenes. That's exactly right.
 
-{{< post-preview "first-post" >}}
-{{< post-preview "first-post" >}}
+{{< post-preview "understanding-node-js-architecture-and-internal-workings" >}}
+
+#### Ready to dive in yet?
+Check out the articles below, and don't forget to subscribe to get the latest Node.js tutorials delivered to your inbox!
+
+## Web Server
+### Project Setup
+{{< post-preview "the-right-way-to-setup-a-nodejs-and-typescript" >}}
