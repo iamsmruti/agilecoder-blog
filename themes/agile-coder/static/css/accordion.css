@@ -8,9 +8,17 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  margin-top: 10px!important;
+  margin-top: 10px !important;
   font-family: 'Space Mono';
   font-size: 24px;
+  display: flex !important;
+  justify-content: space-between !important;
+  transition: border-bottom-left-radius 0.3s ease, border-bottom-right-radius 0.3s ease;
+}
+
+.accordion-arrow {
+  font-size: 18px;
+  transition: transform 0.3s ease;
 }
 
 .accordion-content {
@@ -32,4 +40,8 @@
   border-bottom: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.accordion-header.active .accordion-arrow {
+  transform: rotate(180deg);
 }

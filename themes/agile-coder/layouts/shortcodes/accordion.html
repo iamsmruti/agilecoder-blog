@@ -1,5 +1,8 @@
 <section class="accordion">
-  <button class="accordion-header">{{ .Get "title" }}</button>
+  <button class="accordion-header">
+    <span>{{ .Get "title" }}</span>
+    <span class="accordion-arrow"><i class="fa-solid fa-chevron-down"></i></span>
+  </button>
   <div class="accordion-content">
     <p>{{ .Inner }}</p>
   </div>
