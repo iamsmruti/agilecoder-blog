@@ -18,6 +18,7 @@ Node.js is an open-source, cross-platform JavaScript runtime environment. Its ma
 ## NodeJS Architecture
 Let’s start by understanding the three main building blocks of Node.js: V8, Libuv, and Bindings.
 
+![](nodejs-architecture.png)
 
 ### I. V8 JavaScript Engine
 Node.js is built on top of the V8 JavaScript engine developed by Google for the Chrome browser. V8 is known for its high performance because it compiles JavaScript directly into machine code instead of interpreting it line by line. Here’s how V8 contributes to Node.js’s speed:

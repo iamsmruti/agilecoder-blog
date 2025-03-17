@@ -1,11 +1,16 @@
 <header class="header">
   <h1>
     <a class="logo" href="{{ "/" | relURL }}">
-      <img src="{{ "assets/agilecoder-icon.png" | relURL }}"/>
+      <img src="{{ "assets/agilecoder-icon.png" | relURL }}" alt="Agile Coder Logo" />
       <p>Agile Coder</p>
     </a>
   </h1>
-  <nav >
+
+  <div class="menu-button" id="menuButton">
+    <i class="fa-solid fa-bars" id="menuIcon"></i>
+  </div>
+
+  <nav id="navMenu">
     <ul>
       <li><a href="{{ "/" | relURL }}">Home</a></li>
       <li><a href="{{ "/pages/nodejs/" | relURL }}">NodeJS</a></li>
@@ -14,3 +19,20 @@
     </ul>
   </nav>
 </header>
+
+<script>
+  document.getElementById("menuButton").addEventListener("click", function() {
+    const navMenu = document.getElementById("navMenu");
+    const menuIcon = document.getElementById("menuIcon");
+
+    navMenu.classList.toggle("active");
+
+    if (navMenu.classList.contains("active")) {
+      menuIcon.classList.remove("fa-bars");
+      menuIcon.classList.add("fa-times");
+    } else {
+      menuIcon.classList.remove("fa-times");
+      menuIcon.classList.add("fa-bars");
+    }
+  });
+</script>

@@ -54,3 +54,7 @@ a:hover {
 .blue-link {
   color: #6ab7f1 !important;
 }
+
+.comments-section {
+  padding: 0 1rem;
+}
